@@ -1,0 +1,10 @@
+{
+  "name": "node-dirscan",
+  "version": "0.0.1",
+  "description": "a remote directory scanner",
+  "main": "scan.js",
+  "dependencies": {
+    "request": "",
+    "async": ""
+  }
+}
