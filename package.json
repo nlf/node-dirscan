@@ -5,6 +5,7 @@
   "main": "scan.js",
   "dependencies": {
     "request": "",
-    "async": ""
+    "async": "",
+    "optimist": "~0.3.5"
   }
 }
