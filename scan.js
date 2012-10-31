@@ -2,11 +2,17 @@ var fs = require('fs'),
     request = require('request'),
     async = require('async');
 
-var target = process.argv[2],
-    threads = parseInt(process.argv[3], 10),
+var argv = require('optimist')
+    .demand('w')
+    .describe('w', 'Wordlist')
+    .demand(2)
+    .argv;
+
+var target = argv._[0],
+    threads = parseInt(argv._[1], 10),
     output = fs.createWriteStream('./scan.txt');
 
-var wordlist = fs.readFileSync('./wordlist.txt', 'utf8').split('\n');
+var wordlist = fs.readFileSync(argv.w, 'utf8').split('\n');
 console.log('starting with ' + wordlist.length + ' jobs');
 
 function addPrefix(prefix) {
